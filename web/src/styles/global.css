@@ -50,6 +50,11 @@ textarea {
   /* rem => 160% do font-size do elemento, 
      então caso a font-size seja 16px, ela será 16 * 0.6 * 1.6 = 15,36px */
   font: 500 1.6rem Poppins;
+  color: var(--color-text-base);
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
