@@ -13,8 +13,8 @@ const Landing = () => {
             <div id="page-landing-content" className="container">
                 <div className="logo-container">
                     <img src={logoImg} alt="Proffy - logo" />
+                    <h2>Sua plataforma de estudos online.</h2>
                 </div>
-                <h2>Sua plataforma de estudos online.</h2>
                 <img
                     src={landingImg}
                     alt="Plataforma de estudos" className="hero-image"
@@ -22,16 +22,16 @@ const Landing = () => {
 
                 <div className="buttons-container">
                     <a href="" className="study">
-                        <img src={studyIcon} alt="Estudar"/>
+                        <img src={studyIcon} alt="Estudar" />
                         Estudar
                     </a>
                     <a href="" className="give-classes">
-                        <img src={giveClassesIcon} alt="Dar Aulas"/>
+                        <img src={giveClassesIcon} alt="Dar Aulas" />
                         Dar Aulas
                     </a>
                 </div>
                 <span className="total-connections">
-                    Total de 200 conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/>
+                    Total de 200 conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo" />
                 </span>
             </div>
         </div>

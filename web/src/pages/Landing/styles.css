@@ -90,3 +90,65 @@
 .total-connections img {
     margin-left: 0.8rem;
 }
+
+/* Ponto onde será feita a conversão do layout para versão desktop */
+@media (min-width: 1100px) {
+    #page-landing-content {
+        max-width: 1100px;
+
+        display: grid;
+
+        /* 1ª linha terá 350px e a outra o espaço que sobrar */
+        grid-template-rows: 350px 1fr;
+
+        /* 1ª coluna terá o dobro de tamanho que as outras 2 colunas */
+        grid-template-columns: 2fr 1fr 1fr;
+
+        /* O que ocupa cada area do grid */
+        grid-template-areas: 
+            "logo hero hero"
+            "buttons buttons total";
+    }
+
+    .logo-container {
+        /* Passa à classe logo-container qual é a área do grid que ela irá ocupar */
+        grid-area: logo;
+        align-self: center;
+        text-align: left;
+        margin: 0;
+    }
+
+    .logo-container h2 {
+        text-align: initial;
+        font-size: 3.6rem;
+    }
+    .logo-container img {
+        height: 100%;
+
+    }
+
+
+    .hero-image {
+        grid-area: hero;
+
+        /* ALinhar à direita */
+        justify-self: end;
+    }
+
+    .buttons-container {
+        grid-area: buttons;
+        justify-content: flex-start;
+    }
+
+    .buttons-container a {
+        font-size: 2.4rem;
+    }
+    .buttons-container a img {
+        margin-r: 2.4rem;
+    }
+
+    .total-connections {
+        grid-area: total;
+        justify-self: end;
+    }
+}
