@@ -3,6 +3,7 @@ import PageHeader from '../../components/PageHeader';
 import './styles.css';
 import Input from '../../components/Input';
 import warningIcon from '../../assets/images/icons/warning.svg';
+import Textarea from '../../components/TextArea';
 
 const TeacherForm = () => {
     return (
@@ -17,6 +18,7 @@ const TeacherForm = () => {
                     <Input name="name" label="Nome completo" />
                     <Input name="avatar" label="Avatar" />
                     <Input name="whatsapp" label="WhatsApp" />
+                    <Textarea name="bio" label="Biografia"/>
                 </fieldset>
                 <fieldset>
                     <legend>Sobre a aula</legend>
