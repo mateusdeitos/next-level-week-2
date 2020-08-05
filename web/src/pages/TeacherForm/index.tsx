@@ -1,4 +1,5 @@
 import React, { useState, useCallback, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
 import './styles.css';
 import Input from '../../components/Input';
@@ -14,6 +15,7 @@ interface ScheduleItems {
 }
 
 const TeacherForm = () => {
+    const history = useHistory();
     const [scheduleItems, setScheduleItems] = useState<ScheduleItems[]>([
         { week_day: '0', from: '', to: '' }
     ]);
@@ -30,15 +32,6 @@ const TeacherForm = () => {
 
     const handleCreateClass = useCallback((event: FormEvent) => {
         event.preventDefault();
-        console.log({
-            name,
-            avatar,
-            whatsapp,
-            bio,
-            subject,
-            cost: Number(cost),
-            scheduleItems,
-        })
         api.post('/classes', {
             name,
             avatar,
@@ -47,8 +40,13 @@ const TeacherForm = () => {
             subject,
             cost: Number(cost),
             schedule: scheduleItems,
-        }).then(response => console.log(response.data));
-    }, [avatar, bio, cost, name, scheduleItems, subject, whatsapp]);
+        }).then(() => {
+            alert('Cadastro realizado com sucesso');
+
+            history.push('/');
+        }).catch(() => alert('Erro no cadastro!'));
+
+    }, [avatar, bio, cost, history, name, scheduleItems, subject, whatsapp]);
 
     const setScheduleItemValue = useCallback(
         (position: number, field: string, value: string) => {
