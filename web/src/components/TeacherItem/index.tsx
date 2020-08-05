@@ -2,26 +2,32 @@ import React from 'react';
 import './styles.css'
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+    name: string;
+    subject: string;
+    cost: number;
+    avatar: string;
+    whatsapp: string;
+    bio: string;
+}
+
+interface TeacherProps {
+    teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherProps> = ({teacher}) => {
     return (
         <article className="teacher-item">
             <header>
-                <img src="https://avatars2.githubusercontent.com/u/8628316?v=4" alt="Mateus Deitos" />
+                <img src={teacher.avatar} alt={teacher.name} />
                 <div>
-                    <strong>Mateus Deitos</strong>
-                    <span>Engenharia Civil</span>
+                    <strong>{teacher.name}</strong>
+                    <span>{teacher.subject}</span>
                 </div>
             </header>
-            <p>
-                Instrutor de Educação Física para iniciantes, minha missão de vida é levar saúde e contribuir para o crescimento de quem se interessar.
-
-                <br />
-                <br />
-                Comecei a minha jornada profissional em 2001, quando meu pai me deu dois alteres de 32kg com a seguinte condição: "Aprenda a fazer dinheiro com isso!"
-
-            </p>
+            <p>{teacher.bio}</p>
             <footer>
-                <p>Preço/hora<strong>R$ 80,00</strong></p>
+                <p>Preço/hora<strong>{teacher.cost}</strong></p>
                 <button><img src={whatsappIcon} alt="Contato" />Entrar em contato</button>
             </footer>
         </article>
