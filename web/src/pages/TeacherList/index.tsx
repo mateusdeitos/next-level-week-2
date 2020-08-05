@@ -7,16 +7,13 @@ import Input from '../../components/Input';
 import Select from '../../components/Select';
 import api from '../../services/api';
 
-interface TeacherItem extends Teacher {
-    id: number;
-}
 
 const TeacherList = () => {
 
     const [subject, setSubject] = useState('');
     const [weekDay, setWeekDay] = useState('');
     const [time, setTime] = useState('');
-    const [teachers, setTeachers] = useState<TeacherItem[]>([]);
+    const [teachers, setTeachers] = useState<Teacher[]>([]);
 
     const searchTeachers = useCallback(async (event: FormEvent) => {
         event.preventDefault();

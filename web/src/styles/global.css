@@ -57,6 +57,10 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   /* vw: 90% da tela horizontalmente a não ser que seja maior que 700px */
   width: 90vw;

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './styles.css'
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 export interface Teacher {
+    id: number;
     name: string;
     subject: string;
     cost: number;
@@ -15,7 +18,14 @@ interface TeacherProps {
     teacher: Teacher;
 }
 
-const TeacherItem: React.FC<TeacherProps> = ({teacher}) => {
+const TeacherItem: React.FC<TeacherProps> = ({ teacher }) => {
+
+    const createNewConnection = useCallback(async () => {
+        await api.post('/connections', {
+            user_id: teacher.id,
+        });
+    }, [teacher.id])
+
     return (
         <article className="teacher-item">
             <header>
@@ -27,8 +37,14 @@ const TeacherItem: React.FC<TeacherProps> = ({teacher}) => {
             </header>
             <p>{teacher.bio}</p>
             <footer>
-                <p>Preço/hora<strong>{teacher.cost}</strong></p>
-                <button><img src={whatsappIcon} alt="Contato" />Entrar em contato</button>
+                <p>Preço/hora<strong>{formatCurrency(teacher.cost)}</strong></p>
+                <a
+                    target="_blank"
+                    onClick={createNewConnection}
+                    href={`https://wa.me/${teacher.whatsapp}`}>
+                    <img src={whatsappIcon} alt="Contato" />
+                        Entrar em contato
+                </a>
             </footer>
         </article>
     );

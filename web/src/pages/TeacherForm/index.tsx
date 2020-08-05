@@ -17,7 +17,7 @@ interface ScheduleItems {
 const TeacherForm = () => {
     const history = useHistory();
     const [scheduleItems, setScheduleItems] = useState<ScheduleItems[]>([
-        { week_day: '0', from: '', to: '' }
+        { week_day: '', from: '', to: '' }
     ]);
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
@@ -27,7 +27,7 @@ const TeacherForm = () => {
     const [cost, setCost] = useState('');
 
     const addNewScheduleItem = useCallback(() => {
-        setScheduleItems([...scheduleItems, { week_day: '0', from: '', to: '' }]);
+        setScheduleItems([...scheduleItems, { week_day: '', from: '', to: '' }]);
     }, [scheduleItems]);
 
     const handleCreateClass = useCallback((event: FormEvent) => {
@@ -124,13 +124,14 @@ const TeacherForm = () => {
                     </fieldset>
                     <fieldset>
                         <legend>Horários Disponíveis
-                        <button onClick={addNewScheduleItem}>
+                        <button type="button" onClick={addNewScheduleItem}>
                                 + Novo Horário
                         </button>
                         </legend>
                         {scheduleItems.map((item, index) => (
                             <div key={index} className="schedule-item">
                                 <Select
+                                    autoFocus
                                     name="week_day"
                                     label="Dia da semana"
                                     value={item.week_day}
