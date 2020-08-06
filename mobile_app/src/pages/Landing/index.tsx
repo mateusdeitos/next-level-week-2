@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import styles from './styles';
 import landingImg from '../../assets/images/landing.png';
 import studyIcon from '../../assets/images/icons/study.png';
 import heartIcon from '../../assets/images/icons/heart.png';
 import giveClassesIcon from '../../assets/images/icons/give-classes.png';
+import { useNavigation } from '@react-navigation/native';
 
 const Landing: React.FC = () => {
+    const { navigate } = useNavigation();
+
+    const handleNavigateToGiveClassesPage = useCallback(() => {
+        navigate('GiveClasses');
+    }, [])
     return (
         <View style={styles.container}>
             <Image source={landingImg} style={styles.banner} />
@@ -18,18 +25,21 @@ const Landing: React.FC = () => {
                 <Text style={styles.titleBold}>O que deseja fazer?</Text>
             </Text>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={[styles.button, styles.buttonPrimary]}>
+                <RectButton style={[styles.button, styles.buttonPrimary]}>
                     <Image source={studyIcon} />
                     <Text style={styles.buttonText}>Estudar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
+                </RectButton>
+                <RectButton
+                    style={[styles.button, styles.buttonSecondary]}
+                    onPress={handleNavigateToGiveClassesPage}
+                >
                     <Image source={giveClassesIcon} />
                     <Text style={styles.buttonText}>Dar Aulas</Text>
-                </TouchableOpacity>
+                </RectButton>
             </View>
             <Text style={styles.totalConnections}>
-                Total de 200 conexões já realizadas {'\t'}
-            <Image source={heartIcon} />
+                Total de 199 conexões já realizadas {'\t'}
+                <Image source={heartIcon} />
             </Text>
         </View>)
 }
