@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img alt="Languages" title="Languages" src="https://img.shields.io/github/languages/count/sirmd/next-level-week-2 />
+  <img alt="Languages" title="Languages" src="https://img.shields.io/github/languages/count/sirmd/next-level-week-2" />
 
   <img alt="Language top" title="Language top"  src="https://img.shields.io/github/languages/top/sirmd/next-level-week-2" />
 
