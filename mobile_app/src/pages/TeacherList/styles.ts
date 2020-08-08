@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
     },
     searchForm: {
+        marginTop: 30,
         marginBottom: 24,
 
     },
