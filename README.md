@@ -18,6 +18,12 @@
   - Application developed for the 2th edition of the Next Level Week, event promoted by Rocketseat.
   - The goal of the application is to create a platform for teachers that want to give online classes and for students that need those classes.
 
+## Backend 🚀
+ - NodeJS developed using TypeScript
+ - Database: SQLite
+ - ORM: Knex
+ - Express
+ 
 
 ## Web 💻
 <p align="center">
@@ -37,21 +43,16 @@
   <img width="250" src=".github/mobile-6.jpeg"/>
 </p>
 
-## Knowledges 🚀
- - Styles with Styled Components
- - Using custom react hooks
- - Using a fake server to store data
- - Using hooks to update components on the screen
- - Automated tests with jest
- - AsyncStorage
- - ContextApi
+## Knowledges Applied 
+ - NodeJS
+ - SQLite
+ - Express
+ - TypeScript
+ - AsyncStorage to store favorites in the mobile app
+ - Mobile-first concept to develop the web page
+ - Responsive styling for the web
+ - Nesting navigators in the mobile app using react-navigation lib
  
-## Results 🤞
-<h1 align="center">
-  <img width="500" src=".github/tests1.png"/>
-  <img width="500" src=".github/tests.png"/>
-</h1>
-
 ## Credits 👏
   - <a target="_blank" href="https://rocketseat.com.br">Rocketseat</a>
 
