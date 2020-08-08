@@ -22,9 +22,9 @@ const Favorites: React.FC = () => {
     }, []);
 
     // useFocusEffect força o carregamento da lista toda vez que entrar na página
-    useFocusEffect(() => {
+    useFocusEffect(useCallback(() => {
         loadFavorites();
-    })
+    }, [favorites]))
 
     return (
         <View style={styles.container}>
