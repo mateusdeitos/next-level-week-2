@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="250" src="mobile_app/src/assets/images/logo@3x.png"/>
+  <img width="500" src=".github/logo.png"/>
 </h1>
 
 <p align="center">
