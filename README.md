@@ -3,9 +3,9 @@
 </h1>
 
 <p align="center">
-  <img alt="Languages" title="Languages" src="https://img.shields.io/github/languages/count/sirmd/gostack-desafio-08-fundamentos-react-native" />
+  <img alt="Languages" title="Languages" src="https://img.shields.io/github/languages/count/sirmd/next-level-week-2 />
 
-  <img alt="Language top" title="Language top" title="Made By sirmd"  src="https://img.shields.io/github/languages/top/sirmd/gostack-desafio-08-fundamentos-react-native" />
+  <img alt="Language top" title="Language top"  src="https://img.shields.io/github/languages/top/sirmd/next-level-week-2" />
 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=282A36">
 
