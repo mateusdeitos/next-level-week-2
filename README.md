@@ -15,13 +15,26 @@
 </p>
 
 ## Description
-  - Application developed as a challenge for the GoStack Bootcamp 2020.
+  - Application developed for the 2th edition of the Next Level Week, event promoted by Rocketseat.
+  - The goal of the application is to create a platform for teachers that want to give online classes and for students that need those classes.
 
 
-## Demonstration 📱
+## Web 💻
 <p align="center">
-  <img width="250" src=".github/print_1.png"/>
-  <img width="250" src=".github/print_2.png"/>
+  <img width="500" src=".github/web-1.png"/>
+  <img width="500" src=".github/web-2.png"/>
+  <img width="500" src=".github/web-4.png"/>
+  <img width="500" src=".github/web-3.png"/>
+</p>
+
+## Mobile 📱
+<p align="center">
+  <img width="250" src=".github/mobile-1.jpeg"/>
+  <img width="250" src=".github/mobile-2.jpeg"/>
+  <img width="250" src=".github/mobile-4.jpeg"/>
+  <img width="250" src=".github/mobile-3.jpeg"/>
+  <img width="250" src=".github/mobile-5.jpeg"/>
+  <img width="250" src=".github/mobile-6.jpeg"/>
 </p>
 
 ## Knowledges 🚀
