@@ -5,6 +5,15 @@ const styles = StyleSheet.create({
         flex: 1, //Faz o elemento ocupar toda tela
         backgroundColor: '#f0f0f7',
     },
+    teacherList: {
+        marginTop: -40,
+    },
+
+    teacherListContent: {
+        paddingHorizontal: 16,
+        paddingBottom: 16,
+    }
+    
     
 });
 

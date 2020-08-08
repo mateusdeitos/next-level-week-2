@@ -1,17 +1,26 @@
 import React from 'react';
-import { View, ImageBackground, Text } from 'react-native';
+import { View } from 'react-native';
 import styles from './styles';
-import bgImage from '../../assets/images/give-classes-background.png';
-import { RectButton } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
 import PageHeader from '../../components/PageHeader';
+import TeacherItem from '../../components/TeacherItem';
 
 const Favorites: React.FC = () => {
-    const navigation = useNavigation();
-
     return (
         <View style={styles.container}>
-            <PageHeader title="Meus Proffys Disponíveis" />
+            <PageHeader title="Proffys Disponíveis" />
+
+            <ScrollView
+                style={styles.teacherList}
+                contentContainerStyle={styles.teacherListContent} // -> Aplica a estilização ao Conteúdo do scrollview
+            >
+                <TeacherItem />
+                <TeacherItem />
+                <TeacherItem />
+                <TeacherItem />
+                <TeacherItem />
+
+            </ScrollView>
         </View>
     )
 }
