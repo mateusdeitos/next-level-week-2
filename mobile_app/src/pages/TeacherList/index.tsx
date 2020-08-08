@@ -1,20 +1,34 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { View, ImageBackground, Text } from 'react-native';
 import styles from './styles';
 import { ScrollView, TextInput, BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons'
 import PageHeader from '../../components/PageHeader';
-import TeacherItem, { ITeacherProps } from '../../components/TeacherItem';
+import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import api from '../../services/api';
+import AsyncStorage from '@react-native-community/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
 
 const TeacherList: React.FC = () => {
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+    const [favorites, setFavorites] = useState<string[]>([]);
     const [subject, setSubject] = useState('');
     const [week_day, setWeekDay] = useState('');
     const [time, setTime] = useState('');
     const [teachers, setTeachers] = useState([]);
 
+    const loadFavorites = useCallback(async () => {
+        await AsyncStorage.getItem('favorites').then(response => {
+            if (response) {
+                const favoritedTeachersIds = JSON.parse(response);
+                setFavorites(favoritedTeachersIds);
+            }
+
+        });
+    }, []);
+
     const handleSubmit = useCallback(async () => {
+        loadFavorites();
         const response = await api.get('classes', {
             params: {
                 subject,
@@ -22,8 +36,8 @@ const TeacherList: React.FC = () => {
                 time,
             }
         });
-        console.log(response.data);
         setTeachers(response.data);
+        setIsFiltersVisible(!response.data);
     }, [subject, week_day, time]);
 
 
@@ -82,14 +96,18 @@ const TeacherList: React.FC = () => {
                 style={styles.teacherList}
                 contentContainerStyle={styles.teacherListContent} // -> Aplica a estilização ao Conteúdo do scrollview
             >
-                {teachers.map((teacher: ITeacherProps, index) => {
+                {teachers.map((teacher: Teacher, index) => {
                     return <TeacherItem
-                        key={index}
+                        key={teacher.id}
+                        id={teacher.id}
                         avatar={teacher.avatar}
                         bio={teacher.bio}
                         cost={teacher.cost}
                         name={teacher.name}
-                        subject={teacher.subject} />
+                        subject={teacher.subject}
+                        whatsapp={teacher.whatsapp}
+                        favorited={favorites.includes(teacher.id)}
+                    />
                 })}
 
             </ScrollView>
